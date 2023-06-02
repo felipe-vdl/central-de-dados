@@ -12,7 +12,7 @@ export default function Navbar() {
 
   return (
     <header className="w-screen text-white bg-roxo md:gap-0  items-center z-20 shadow-md shadow-black/20">
-      <div className="grid grid-cols-1 items-center md:grid-cols-3 p-2">
+      <div className="grid grid-cols-1 items-center md:grid-cols-3 gap-2 md:gap-0 p-2">
         <div className="flex justify-center items-center">
           <NavLink to={"/"}>
             <img
