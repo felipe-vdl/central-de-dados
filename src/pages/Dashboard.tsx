@@ -1,32 +1,38 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import sign from "../utils/sign";
+import hasKey from "../utils/hasKey";
+import dashboardList from "../store/dashboards";
 
-const dashboards = {
-  semed: "4",
-};
-
-function hasKey<K extends string, T extends object>(
-  k: K,
-  o: T
-): o is T & Record<K, unknown> {
-  return k in o;
-}
-
+const METABASE_URL = import.meta.env.VITE_METABASE_URL;
+const METABASE_SECRET = import.meta.env.VITE_METABASE_SECRET;
+const DASHBOARDS = { ...dashboardList };
 
 export default function DashboardPage() {
   const { dashboardName } = useParams();
   const id = dashboardName ? dashboardName?.toLowerCase() : "";
-  
-  const [currentFrame, setCurrentFrame] = useState<string>("");
 
-  const getDashboard = async (id: string) => {
-    setCurrentFrame(`${import.meta.env.VITE_METABASE_URL}/embed/dashboard/${id}`)
-  };
-  
-  if (hasKey(id, dashboards)) {
-    dashboards[id];
-    getDashboard(id);
+  const [token, setToken] = useState<string>("");
+  useEffect(() => {
+    if (id && hasKey(id, DASHBOARDS)) {
+      const getToken = async () => {
+        const payload = {
+          resource: { dashboard: DASHBOARDS[id] },
+          params: {},
+        };
+
+        const jwt = await sign(payload, METABASE_SECRET);
+        setToken(jwt);
+      };
+
+      getToken();
+    }
+  }, [id]);
+
+  if (id && hasKey(id, DASHBOARDS)) {
+    const frame = `${METABASE_URL}/embed/dashboard/${token}#bordered=true&titled=true`;
+    return <iframe className="w-full" src={frame} allowTransparency />;
   }
 
-  return <iframe src={currentFrame} />;
+  return <h1 className="m-auto text-2xl">O dashboard não foi encontrado.</h1>;
 }

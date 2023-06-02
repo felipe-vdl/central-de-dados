@@ -1,6 +1,7 @@
-import { NavLink } from "react-router-dom";
 import mesquitaWhiteLogo from "../assets/logoWhite.png";
 import { useState } from "react";
+import { NavLink } from "react-router-dom";
+import dashboardList from "../store/dashboards";
 
 export default function Navbar() {
   const [dropdownIsOpen, setDropdownIsOpen] = useState<boolean>(false);
@@ -11,12 +12,12 @@ export default function Navbar() {
 
   return (
     <header className="w-screen text-white bg-roxo md:gap-0  items-center z-20 shadow-md shadow-black/20">
-      <div className="grid grid-cols-1 items-center md:grid-cols-3 gap-2 p-2">
-        <div className="flex justify-center">
+      <div className="grid grid-cols-1 items-center md:grid-cols-3 p-2">
+        <div className="flex justify-center items-center">
           <NavLink to={"/"}>
             <img
-              className="drop-shadow-md mx-auto"
-              width={240}
+              className="drop-shadow-md"
+              width={220}
               alt="Logo Mesquita"
               src={mesquitaWhiteLogo}
             />
@@ -26,7 +27,9 @@ export default function Navbar() {
           <button
             aria-label="Abrir/fechar dropdown de links das secretarias."
             title="Secretarias"
-            className={`hover:text-indigo-300 ${dropdownIsOpen ? "text-indigo-200" : ""} flex flex-col items-center text-2xl font-bold tracking-wider hover:cursor-pointer gap-1`}
+            className={`hover:text-indigo-300 ${
+              dropdownIsOpen ? "text-indigo-200" : ""
+            } flex flex-col items-center text-2xl font-bold tracking-wider hover:cursor-pointer gap-1`}
             onClick={handleToggleDropdown}
           >
             <span>SECRETARIAS</span>
@@ -56,55 +59,21 @@ export default function Navbar() {
       </div>
       {dropdownIsOpen && (
         <nav className="bg-roxo z-10 shadow-md shadow-black/20 border-y border-white/30">
-          <ul className="flex flex-wrap items-center justify-between">
-            <li className="w-1/3 md:w-1/6">
-              <NavLink
-                className={({ isActive }) =>
-                  isActive
-                    ? "block text-center font-bold py-2 text-indigo-50 bg-indigo-400/40"
-                    : "block text-center font-bold py-2 hover:text-indigo-50 hover:bg-indigo-400/40 text-white"
-                }
-                to={"/semed"}
-              >
-                SEMED
-              </NavLink>
-            </li>
-            <li className="w-1/3 md:w-1/6">
-              <NavLink
-                className={({ isActive }) =>
-                  isActive
-                    ? "block text-center font-bold py-2 text-indigo-50 bg-indigo-400/40"
-                    : "block text-center font-bold py-2 hover:text-indigo-50 hover:bg-indigo-400/40 text-white"
-                }
-                to={"/semus"}
-              >
-                SEMUS
-              </NavLink>
-            </li>
-            <li className="w-1/3 md:w-1/6">
-              <NavLink
-                className={({ isActive }) =>
-                  isActive
-                    ? "block text-center font-bold py-2 text-indigo-50 bg-indigo-400/40"
-                    : "block text-center font-bold py-2 hover:text-indigo-50 hover:bg-indigo-400/40 text-white"
-                }
-                to={"/semas"}
-              >
-                SEMAS
-              </NavLink>
-            </li>
-            <li className="w-1/3 md:w-1/6">
-              <NavLink
-                className={({ isActive }) =>
-                  isActive
-                    ? "block text-center font-bold py-2 text-indigo-50 bg-indigo-400/40"
-                    : "block text-center font-bold py-2 hover:text-indigo-50 hover:bg-indigo-400/40 text-white"
-                }
-                to={"/semsop"}
-              >
-                SEMSOP
-              </NavLink>
-            </li>
+          <ul className="flex flex-wrap items-center justify-around">
+            {Object.keys(dashboardList).map((key) => (
+              <li className="w-1/3 md:w-1/6">
+                <NavLink
+                  className={({ isActive }) =>
+                    isActive
+                      ? "block text-center font-bold py-2 text-indigo-50 bg-indigo-400/40"
+                      : "block text-center font-bold py-2 hover:text-indigo-50 hover:bg-indigo-400/40 text-white"
+                  }
+                  to={`/${key}`}
+                >
+                  {key.toUpperCase()}
+                </NavLink>
+              </li>
+            ))}
           </ul>
         </nav>
       )}
