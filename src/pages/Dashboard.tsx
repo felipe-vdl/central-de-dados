@@ -17,7 +17,7 @@ export default function DashboardPage() {
     if (id && hasKey(id, DASHBOARDS)) {
       const getToken = async () => {
         const payload = {
-          resource: { dashboard: DASHBOARDS[id] },
+          resource: { dashboard: DASHBOARDS[id].id },
           params: {},
         };
 
@@ -31,7 +31,7 @@ export default function DashboardPage() {
 
   if (id && hasKey(id, DASHBOARDS)) {
     const frame = `${METABASE_URL}/embed/dashboard/${token}#bordered=true&titled=true`;
-    return <iframe className="w-full" src={frame} allowTransparency />;
+    return <iframe className="w-full flex-1" src={frame} allowTransparency />;
   }
 
   return <h1 className="m-auto text-2xl">O dashboard não foi encontrado.</h1>;

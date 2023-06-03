@@ -4,9 +4,9 @@ import Footer from "./Footer";
 
 export default function RootLayout() {
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col min-h-screen font-">
       <Navbar />
-      <main className="flex-1 flex bg-white bg-gradient-to-br from-roxo/30">
+      <main className="mt-[195px] md:mt-[131px] flex-1 flex flex-col bg-white bg-gradient-to-br">
         <Outlet />
       </main>
       <Footer />

@@ -11,7 +11,7 @@ export default function Navbar() {
   };
 
   return (
-    <header className="w-screen text-white bg-roxo md:gap-0  items-center z-20 shadow-md shadow-black/20">
+    <header className="fixed w-screen text-white bg-roxo md:gap-0  items-center z-20 shadow-md shadow-black/20">
       <div className="grid grid-cols-1 items-center md:grid-cols-3 gap-2 md:gap-0 p-2">
         <div className="flex justify-center items-center">
           <NavLink to={"/"}>
@@ -61,7 +61,7 @@ export default function Navbar() {
         <nav className="bg-roxo z-10 shadow-md shadow-black/20 border-y border-white/30">
           <ul className="flex flex-wrap items-center justify-around">
             {Object.keys(dashboardList).map((key) => (
-              <li className="w-1/3 md:w-1/6">
+              <li className="w-1/3 md:w-1/6" key={crypto.randomUUID()}>
                 <NavLink
                   className={({ isActive }) =>
                     isActive
