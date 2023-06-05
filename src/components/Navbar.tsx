@@ -1,5 +1,6 @@
-import mesquitaWhiteLogo from "../assets/logoWhite.png";
 import { useState } from "react";
+import { v4 as uuid } from "uuid";
+import mesquitaWhiteLogo from "../assets/logoWhite.png";
 import { NavLink } from "react-router-dom";
 import dashboardList from "../store/dashboards";
 
@@ -61,7 +62,7 @@ export default function Navbar() {
         <nav className="bg-roxo z-10 shadow-md shadow-black/20 border-y border-white/30">
           <ul className="flex flex-wrap items-center justify-around">
             {Object.keys(dashboardList).map((key) => (
-              <li className="w-1/3 md:w-1/6" key={crypto.randomUUID()}>
+              <li className="w-1/3 md:w-1/6" key={uuid()}>
                 <NavLink
                   className={({ isActive }) =>
                     isActive
