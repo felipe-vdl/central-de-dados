@@ -1,18 +1,25 @@
 import { useState } from "react";
 import { v4 as uuid } from "uuid";
-import mesquitaWhiteLogo from "../assets/logoWhite.png";
+import mesquitaWhiteLogo from "../assets/logos/logoWhite.png";
 import { NavLink } from "react-router-dom";
+import { useParams } from "react-router-dom";
+
 import dashboardList from "../store/dashboards";
+
+const DASHBOARDS = { ...dashboardList };
 
 export default function Navbar() {
   const [dropdownIsOpen, setDropdownIsOpen] = useState<boolean>(false);
+
+  const { dashboardName } = useParams();
+  const id = dashboardName ? dashboardName?.toLowerCase() : "";
 
   const handleToggleDropdown = () => {
     setDropdownIsOpen((st) => !st);
   };
 
   return (
-    <header className="fixed w-screen text-white bg-roxo md:gap-0  items-center z-20 shadow-md shadow-black/20">
+    <header className="sticky w-screen text-white bg-roxo md:gap-0  items-center z-20 shadow-md shadow-black/20">
       <div className="grid grid-cols-1 items-center md:grid-cols-3 gap-2 md:gap-0 p-2">
         <div className="flex justify-center items-center">
           <NavLink to={"/"}>
@@ -57,11 +64,18 @@ export default function Navbar() {
             )}
           </button>
         </div>
+        {DASHBOARDS[id]?.banner && (
+          <img
+            src={DASHBOARDS[id].banner}
+            alt={id}
+            className="w-full rounded aspect-[15/4]"
+          />
+        )}
       </div>
       {dropdownIsOpen && (
         <nav className="bg-roxo z-10 shadow-md shadow-black/20 border-y border-white/30">
           <ul className="flex flex-wrap items-center justify-around">
-            {Object.keys(dashboardList).map((key) => (
+            {Object.keys(DASHBOARDS).map((key) => (
               <li className="w-1/3 md:w-1/6" key={uuid()}>
                 <NavLink
                   className={({ isActive }) =>

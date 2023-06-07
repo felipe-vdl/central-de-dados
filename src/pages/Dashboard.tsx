@@ -4,9 +4,9 @@ import sign from "../utils/sign";
 import hasKey from "../utils/hasKey";
 import dashboardList from "../store/dashboards";
 
+const DASHBOARDS = { ...dashboardList };
 const METABASE_URL = import.meta.env.VITE_METABASE_URL;
 const METABASE_SECRET = import.meta.env.VITE_METABASE_SECRET;
-const DASHBOARDS = { ...dashboardList };
 
 export default function DashboardPage() {
   const { dashboardName } = useParams();
