@@ -68,7 +68,7 @@ export default function Navbar() {
           <img
             src={DASHBOARDS[id].banner}
             alt={id}
-            className="w-full rounded aspect-[15/4]"
+            className="mx-auto max-h-[73px] md:w-full md:max-h-none rounded aspect-[15/4]"
           />
         )}
       </div>
