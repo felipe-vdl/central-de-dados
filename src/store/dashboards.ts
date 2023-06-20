@@ -1,5 +1,5 @@
-import semedLogo from "../assets/logos/semed.png";
-import semedBanner from "../assets/banners/semed.jpeg";
+import prefeituraLogo from "../assets/logos/prefeitura.png";
+import semedBanner from "../assets/banners/semed.png";
 
 interface DashboardList {
   [key: string]: {
@@ -10,10 +10,14 @@ interface DashboardList {
 }
 
 const dashboardList: DashboardList = {
-  semed: {
+  "semed": {
     id: 4,
-    logo: semedLogo,
+    logo: prefeituraLogo,
     banner: semedBanner
+  },
+  "chamador-semas": {
+    id: 14,
+    logo: prefeituraLogo,
   },
 };
 

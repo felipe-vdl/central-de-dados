@@ -2,7 +2,6 @@ import { useState } from "react";
 import { v4 as uuid } from "uuid";
 import { NavLink } from "react-router-dom";
 import { useParams } from "react-router-dom";
-import { useAutoAnimate } from "@formkit/auto-animate/react";
 import mesquitaWhiteLogo from "../assets/logos/logoWhite.png";
 
 import dashboardList from "../store/dashboards";
@@ -12,8 +11,6 @@ const DASHBOARDS = { ...dashboardList };
 export default function Navbar() {
   const [dropdownIsOpen, setDropdownIsOpen] = useState<boolean>(false);
 
-  const [headerRef] = useAutoAnimate();
-
   const { dashboardName } = useParams();
   const id = dashboardName ? dashboardName?.toLowerCase() : "";
 
@@ -22,7 +19,7 @@ export default function Navbar() {
   };
 
   return (
-    <header ref={headerRef} className="sticky w-screen text-white bg-roxo md:gap-0  items-center z-20 shadow-md shadow-black/20">
+    <header className="sticky w-screen text-white bg-roxo md:gap-0  items-center z-20 shadow-md shadow-black/20">
       <div className="grid grid-cols-1 items-center md:grid-cols-3 gap-2 md:gap-0 p-2">
         <div className="flex justify-center items-center">
           <NavLink to={"/"}>
