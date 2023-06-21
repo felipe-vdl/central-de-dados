@@ -17,10 +17,15 @@ const dashboardList: DashboardList = {
     banner: semedBanner,
     nome: 'SEMED'
   },
-  "chamador-semas": {
+  "atendimentos-semas": {
     id: 14,
     logo: prefeituraLogo,
     nome: "ATENDIMENTOS SEMAS"
+  },
+  "atendimentos-iptu": {
+    id: 13,
+    logo: prefeituraLogo,
+    nome: "ATENDIMENTOS IPTU"
   },
 };
 
