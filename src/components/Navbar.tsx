@@ -85,7 +85,7 @@ export default function Navbar() {
                   }
                   to={`/${key}`}
                 >
-                  {key.toUpperCase()}
+                  {DASHBOARDS[key].nome ? DASHBOARDS[key].nome?.toUpperCase() : key.toUpperCase()}
                 </NavLink>
               </li>
             ))}
