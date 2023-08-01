@@ -27,6 +27,11 @@ const dashboardList: DashboardList = {
     logo: prefeituraLogo,
     nome: "ATENDIMENTOS IPTU"
   },
+  "semad": {
+    id: 16,
+    logo: prefeituraLogo,
+    nome: "SEMAD"
+  },
 };
 
 export default dashboardList;
