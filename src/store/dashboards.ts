@@ -27,6 +27,11 @@ const dashboardList: DashboardList = {
     logo: prefeituraLogo,
     nome: "ATENDIMENTOS IPTU"
   },
+  "atendimentos-pgm": {
+    id: 19,
+    logo: prefeituraLogo,
+    nome: "ATENDIMENTOS PGM"
+  },
   "semad": {
     id: 16,
     logo: prefeituraLogo,
