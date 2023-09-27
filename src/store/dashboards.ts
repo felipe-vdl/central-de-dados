@@ -11,31 +11,31 @@ interface DashboardList {
 }
 
 const dashboardList: DashboardList = {
-  "semed": {
-    id: 4,
-    logo: prefeituraLogo,
-    banner: semedBanner,
-    nome: 'SEMED'
-  },
   "atendimentos-semas": {
     id: 14,
     logo: prefeituraLogo,
-    nome: "ATENDIMENTOS SEMAS"
+    nome: "ATENDIMENTOS SEMAS",
   },
   "atendimentos-iptu": {
     id: 13,
     logo: prefeituraLogo,
-    nome: "ATENDIMENTOS IPTU"
+    nome: "ATENDIMENTOS IPTU",
   },
   "atendimentos-pgm": {
     id: 19,
     logo: prefeituraLogo,
-    nome: "ATENDIMENTOS PGM"
+    nome: "ATENDIMENTOS PGM",
   },
-  "semad": {
+  semad: {
     id: 16,
     logo: prefeituraLogo,
-    nome: "SEMAD"
+    nome: "SEMAD",
+  },
+  semed: {
+    id: 4,
+    logo: prefeituraLogo,
+    banner: semedBanner,
+    nome: "SEMED",
   },
 };
 
