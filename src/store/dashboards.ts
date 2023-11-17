@@ -37,6 +37,11 @@ const dashboardList: DashboardList = {
     banner: semedBanner,
     nome: "SEMED",
   },
+  esus: {
+    id: 4,
+    logo: prefeituraLogo,
+    nome: "ESUS",
+  },
 };
 
 export default dashboardList;
