@@ -38,7 +38,7 @@ const dashboardList: DashboardList = {
     nome: "SEMED",
   },
   esus: {
-    id: 4,
+    id: 21,
     logo: prefeituraLogo,
     nome: "ESUS",
   },
