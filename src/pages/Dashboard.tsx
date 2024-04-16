@@ -30,7 +30,7 @@ export default function DashboardPage() {
   }, [id]);
 
   if (id && hasKey(id, DASHBOARDS)) {
-    const frame = `${METABASE_URL}/embed/dashboard/${token}#bordered=true&titled=true`;
+    const frame = `${METABASE_URL}/embed/dashboard/${token}#bordered=true&titled=false`;
     return <iframe className="w-full flex-1" src={frame} allowTransparency />;
   }
 
