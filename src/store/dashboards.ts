@@ -11,17 +11,17 @@ interface DashboardList {
 }
 
 const dashboardList: DashboardList = {
-  "atendimentos-semas": {
+  "assistencia-social": {
     id: 14,
     logo: prefeituraLogo,
     nome: "ASSISTÊNCIA SOCIAL",
   },
-  "atendimentos-iptu": {
+  "iptu": {
     id: 13,
     logo: prefeituraLogo,
     nome: "IPTU",
   },
-  "atendimentos-pgm": {
+  "procuradoria": {
     id: 19,
     logo: prefeituraLogo,
     nome: "PROCURADORIA",
@@ -37,7 +37,7 @@ const dashboardList: DashboardList = {
     banner: semedBanner,
     nome: "EDUCAÇÃO",
   },
-  esus: {
+  semus: {
     id: 21,
     logo: prefeituraLogo,
     nome: "SAÚDE",
