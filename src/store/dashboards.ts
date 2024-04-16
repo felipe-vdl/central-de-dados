@@ -14,33 +14,33 @@ const dashboardList: DashboardList = {
   "atendimentos-semas": {
     id: 14,
     logo: prefeituraLogo,
-    nome: "ATENDIMENTOS SEMAS",
+    nome: "ASSISTÊNCIA SOCIAL",
   },
   "atendimentos-iptu": {
     id: 13,
     logo: prefeituraLogo,
-    nome: "ATENDIMENTOS IPTU",
+    nome: "IPTU",
   },
   "atendimentos-pgm": {
     id: 19,
     logo: prefeituraLogo,
-    nome: "ATENDIMENTOS PGM",
+    nome: "PROCURADORIA",
   },
   semad: {
     id: 16,
     logo: prefeituraLogo,
-    nome: "SEMAD",
+    nome: "ADMINISTRAÇÃO",
   },
   semed: {
     id: 4,
     logo: prefeituraLogo,
     banner: semedBanner,
-    nome: "SEMED",
+    nome: "EDUCAÇÃO",
   },
   esus: {
     id: 21,
     logo: prefeituraLogo,
-    nome: "ESUS",
+    nome: "SAÚDE",
   },
 };
 
