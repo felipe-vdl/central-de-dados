@@ -37,11 +37,11 @@ const dashboardList: DashboardList = {
     banner: semedBanner,
     nome: "EDUCAÇÃO",
   },
-  semus: {
+  /* semus: {
     id: 21,
     logo: prefeituraLogo,
     nome: "SAÚDE",
-  },
+  },*/
 };
 
 export default dashboardList;
